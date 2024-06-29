@@ -43,7 +43,7 @@ const HomeContext = (props) => {
   const addToCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/addtocart' , {
+      fetch('https://snbpnestbackend.vercel.app/addtocart' , {
         method: 'POST',
         headers: {
           Accept:'application/json' ,
@@ -62,7 +62,7 @@ const HomeContext = (props) => {
   const removeFromCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if(localStorage.getItem("auth-token")){
-      fetch('http://localhost:4000/removefromcart' , {
+      fetch('https://snbpnestbackend.vercel.app/removefromcart' , {
         method: 'POST',
         headers: {
           Accept:'application/json' ,
