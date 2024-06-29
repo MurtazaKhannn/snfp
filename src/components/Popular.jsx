@@ -6,7 +6,7 @@ const Popular = () => {
   const [data_Popular , setdata_Popular] = useState([]);
 
   useEffect(() => {
-    fetch('https://snbpnestbackend-i9aqei81v-murtazakhannns-projects.vercel.app/popularinfilefolder')
+    fetch('https://snbpnestbackend.vercel.app/popularinfilefolder')
    .then(res => res.json())
    .then((data) => setdata_Popular(data));
   } , []);

@@ -17,7 +17,7 @@ const HomeContext = (props) => {
   const [cartItem, setCartItem] = useState(getDefaultCart);
 
   useEffect(() => {
-    fetch("https://snbpnestbackend-i9aqei81v-murtazakhannns-projects.vercel.app/allproducts")
+    fetch("https://snbpnestbackend.vercel.app/allproducts")
      .then((res) => res.json())
      .then((data) => {
         setall_products(data.products);
@@ -27,7 +27,7 @@ const HomeContext = (props) => {
       });
 
       if(localStorage.getItem("auth-token")){
-        fetch("https://snbpnestbackend-i9aqei81v-murtazakhannns-projects.vercel.app/getcart" , {
+        fetch("https://snbpnestbackend.vercel.app/getcart" , {
           method: 'POST',
           headers: {
             Accept:'application/json' ,
