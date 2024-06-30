@@ -23,7 +23,7 @@ const Description = (props) => {
     
       const fetchReviews = async (productId) => {
         try {
-          const response = await fetch(`https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/reviews/${productId}`);
+          const response = await fetch(`https://silvanestbackend.vercel.app/reviews/${productId}`);
           const data = await response.json();
           if (data.success) {
             setReviews(data.reviews);
@@ -38,7 +38,7 @@ const Description = (props) => {
       const handleReviewSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/product/${product._id}/addreview`, {
+            const response = await fetch(`https://silvanestbackend.vercel.app/product/${product._id}/addreview`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

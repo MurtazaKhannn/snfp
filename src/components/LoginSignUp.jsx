@@ -21,7 +21,7 @@ const LoginSignUp = () => {
   const login = async () => {
     console.log("Login Function Executed" , formData);
     let responseData;
-    await fetch("https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/login" , {
+    await fetch("https://silvanestbackend.vercel.app/login" , {
       method: 'POST',
       headers: {
         Accept:'application/form-data' ,
@@ -41,7 +41,7 @@ const LoginSignUp = () => {
   const signup = async () => {
     console.log("Sign Up function Executed"  , formData);
     let responseData;
-    await fetch("https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/signup" , {
+    await fetch("https://silvanestbackend.vercel.app/signup" , {
       method: 'POST',
       headers: {
         Accept:'application/form-data' ,

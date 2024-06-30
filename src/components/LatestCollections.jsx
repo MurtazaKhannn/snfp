@@ -6,7 +6,7 @@ const LatestCollections = () => {
   const [New_Collections , setNew_Collections] = useState([]);
 
   useEffect(() => {
-    fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/newcollections')
+    fetch('https://silvanestbackend.vercel.app/newcollections')
    .then(res => res.json())
    .then((data) => setNew_Collections(data));
   } , []);

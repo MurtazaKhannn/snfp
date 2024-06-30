@@ -5,7 +5,7 @@ const RelatedProducts = ({category}) => {
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/relatedproducts/${category}`) // Update the URL with your backend endpoint
+    fetch(`https://silvanestbackend.vercel.app/relatedproducts/${category}`) // Update the URL with your backend endpoint
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
