@@ -17,7 +17,7 @@ const HomeContext = (props) => {
   const [cartItem, setCartItem] = useState(getDefaultCart);
 
   useEffect(() => {
-    fetch("https://silvanestbackend.vercel.app/allproducts")
+    fetch("https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/allproducts")
      .then((res) => res.json())
      .then((data) => {
         setall_products(data.products);
@@ -27,7 +27,7 @@ const HomeContext = (props) => {
       });
 
       if(localStorage.getItem("auth-token")){
-        fetch("https://silvanestbackend.vercel.app/getcart" , {
+        fetch("https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/getcart" , {
           method: 'POST',
           headers: {
             Accept:'application/json' ,
@@ -43,7 +43,7 @@ const HomeContext = (props) => {
   const addToCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if(localStorage.getItem('auth-token')){
-      fetch('https://silvanestbackend.vercel.app/addtocart' , {
+      fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/addtocart' , {
         method: 'POST',
         headers: {
           Accept:'application/json' ,
@@ -62,7 +62,7 @@ const HomeContext = (props) => {
   const removeFromCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if(localStorage.getItem("auth-token")){
-      fetch('https://silvanestbackend.vercel.app/removefromcart' , {
+      fetch('https://silvanestbackend-2mrtrrexv-murtazakhannns-projects.vercel.app/removefromcart' , {
         method: 'POST',
         headers: {
           Accept:'application/json' ,
