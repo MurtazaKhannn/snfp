@@ -68,7 +68,7 @@ const ProductDisplay = (props) => {
                 </div>
                 </div>  */}
             </div>}
-                <button onClick={()=>{addToCart(product.id)}} className='w-[8vw] font-semibold border-4 border-[#403B58] bg-[#403B58] text-white rounded-md px-3 py-1 font-bebas text-xl ' >Add To Cart</button>
+                <button  onClick={()=>{addToCart(product.id); alert("Product added to cart")}} className='w-[8vw] font-semibold border-4 border-[#403B58] bg-[#403B58] text-white rounded-md px-3 py-1 font-bebas text-xl ' >Add To Cart</button>
                 
                 </div>
 
