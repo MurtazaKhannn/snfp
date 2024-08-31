@@ -2,8 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google';
 
-const clientId = "1065317080174-umanp5hufpufu1st54hh7an6oepn7pt7.apps.googleusercontent.com";
-
 const LoginSignUp = () => {
 
   const [state , setstate] = useState("Login")
@@ -19,8 +17,6 @@ const LoginSignUp = () => {
         [e.target.name] : e.target.value
       })
     }
-
-    
 
   const login = async () => {
     console.log("Login Function Executed" , formData);
@@ -62,14 +58,6 @@ const LoginSignUp = () => {
     }
   }
 
-  const onSuccess = (res) => {
-    console.log("Login Successful" , res.profileObj);
-  }
-
-  const onFailure = (res) => {
-    console.log("Login Failed" , res);
-  }
-
 
   return (
     <div className='loginsignup font-bebas flex justify-center items-center w-full h-[88.9vh] '>
@@ -82,17 +70,6 @@ const LoginSignUp = () => {
         </div>
         <button onClick={() => {state === "Login" ? login() : signup()}} className='border-2 border-yellow-500 rounded-md px-3 py-1 text-yellow-500'>Continue</button>
         {state === "Sign Up" ?<p className='font-semibold'> Already have an Account ? <span  onClick={() => {setstate("Login")}} className='text-yellow-500 cursor-pointer'>Login here</span></p> : <p className='font-semibold cursor-pointer'> Create an Account ? <span onClick={() => {setstate("Sign Up")}} className='text-yellow-500'>Click here</span></p> }
-        <div>
-          <GoogleLogin
-            clientId={clientId}
-            buttonText="Login with Google"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-            isSignedIn={true}
-          />
-
-        </div>
         
         <div className='flex gap-2 justify-center items-center'>
           
