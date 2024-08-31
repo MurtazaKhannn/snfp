@@ -7,8 +7,24 @@ import Cart from './components/Cart'
 import LoginSignUp from './components/LoginSignUp'
 import Home from './components/Home'
 import Footer from './components/Footer'
+import { useEffect } from 'react'
+import { gapi } from "gapi-script"
+
+const clientId = "1065317080174-umanp5hufpufu1st54hh7an6oepn7pt7.apps.googleusercontent.com";
+
 
 const App = () => {
+
+  useEffect(() => {
+    function start() {
+        gapi.client.init({
+          clientId:clientId,
+        })
+    }
+    gapi.load('client:auth2' , start)
+  })
+
+
   return (
 
     <>
