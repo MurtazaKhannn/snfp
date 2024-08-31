@@ -1,3 +1,5 @@
+import React from 'react';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -14,6 +16,11 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [React()],
+  build: {
+    rollupOptions: {
+      external: ['gapi-script']
+    }
+  }
 }
 
